@@ -3,21 +3,27 @@ import pandas
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import roc_auc_score
+from sklearn.datasets import load_breast_cancer
 from rfhack import AdversarialHacker
  
 numpy.random.seed(20050119)
  
 
-real = pandas.read_csv("missForest.csv")
- 
-hacker = AdversarialHacker(real)
-result = hacker.hack(0.7)
+# real = pandas.read_csv("missForest.csv")
+
+
+real = load_breast_cancer()
+df = pandas.DataFrame(real.data, columns=real.feature_names)
+print(df.shape)
+
+hacker = AdversarialHacker(df)
+result = hacker.hack(0.55)
 
  
 
 fake = result.df
  
-real_labeled = real.copy()
+real_labeled = df.copy()
 real_labeled['target'] = 1
 fake_labeled = fake.copy()
 fake_labeled['target'] = 0
