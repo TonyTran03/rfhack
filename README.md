@@ -14,3 +14,8 @@ h.min # minimum AUC across iterations
 h.max # maximum AUC across iterations
 ```
 
+# next steps
+
+rough idea: we know if $f: A\rightarrow B$ and $g: B\rightarrow C$ are statistical functions, and both $f$ and $g$ are provably surjective, then for any result $c\in C$, there should exist $a\in A$ such that $g(f(a))=c$, i.e., that surjective maps are closed under composition. 
+
+Concretely, for any metric $m$ or set of metrics $M=\{m_1,m_2,\ldots\}$ with their metric functions $f$ known beforehand, if we can prove surjectivity, then for any $m$ or $M$, there should be an input in the preimage that, when evaluated by $f$, will produce itself. Alternatively, if we cannot prove surjectivity onto the codomain, can we precisely describe one of its subsets that is surjective?
