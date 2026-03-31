@@ -1,3 +1,4 @@
+#pair_hacker.py
 from collections import namedtuple
 from ..data.generators import FeatureStats, make_blobs
 from .rf_wrapper import RFWrapper
