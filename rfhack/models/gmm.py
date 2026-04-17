@@ -1,4 +1,3 @@
-# models/gmm.py
 import numpy as np
 from sklearn.mixture import GaussianMixture
 
@@ -6,7 +5,6 @@ from sklearn.mixture import GaussianMixture
 def sample_gmm(X, y, n0, n1, seed=42, n_components=2, reg_covar=1e-4):
     """
     Fit a per-class GMM on real data and sample synthetic observations.
-
     Parameters
     ----------
     X            : np.ndarray, shape (n, p)
